@@ -1,9 +1,19 @@
+import Navbar from "@/shared/navbar";
+import Hero from "@/components/hero";
+import Categories from "@/components/categories";
+import Levels from "@/components/levels";
+import Guides from "@/components/guides";
+// import Share from "@/components/share";
+
 export default function Home() {
   return (
     <>
-      <div>
-        <h1>Hello World</h1>
-      </div>
+      <Navbar />
+      <Hero />
+      <Categories />
+      <Levels />
+      <Guides />
+      {/* <Share /> */}
     </>
   );
 }
