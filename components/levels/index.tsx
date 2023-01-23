@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsStar, BsStarHalf, BsStarFill } from "react-icons/bs";
 import Option from "../shared/option";
+import { GuideContext } from "@/context/GuideContext";
 
 export default function Levels() {
-  const [isLevel, setLevel] = React.useState(String);
+  const { level, setLevel } = useContext(GuideContext);
 
   return (
     <div className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center">

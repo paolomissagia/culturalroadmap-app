@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import {
   RiNumber1,
   RiNumber2,
@@ -8,18 +8,18 @@ import {
 } from "react-icons/ri";
 import Item from "@/components/shared/item";
 import Roadmap from "../../assets/images/roadmap.jsx";
+import { GuideContext } from "@/context/GuideContext";
 
 export default function Guides() {
-  const [isGuide, setGuide] = useState(null);
-  const [isNext, setNext] = useState(false);
-  const [isLoading, setLoading] = useState(true);
-  const category = "cinema";
-  const level = "begginer";
+  const { category, level } = useContext(GuideContext);
+  const [loading, setLoading] = useState(Boolean);
+  const [guide, setGuide] = useState(null);
 
   const guideDetails = async () => {
     try {
       const res = await fetch(`/api/guides`);
       const data = await res.json();
+      setLoading(false);
       console.log(data);
     } catch (error) {
       console.log(error);
@@ -28,9 +28,9 @@ export default function Guides() {
 
   useEffect(() => {
     guideDetails();
-  }, []);
+  }, [category, level]);
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (loading) return <h1>Loading...</h1>;
   return (
     <div className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center shrink">
       <div className="text-center mb-5 md:mb-10 mx-auto shrink">
@@ -63,15 +63,7 @@ export default function Guides() {
         <button
           type="button"
           className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-          onClick={
-            isNext
-              ? () => {
-                  scroll();
-                }
-              : () => {
-                  setNext(true);
-                }
-          }
+          onClick={() => {}}
         >
           Next
         </button>

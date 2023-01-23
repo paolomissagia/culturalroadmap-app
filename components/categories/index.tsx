@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import { GiBookshelf, GiFilmProjector, GiMusicalScore } from "react-icons/gi";
 import Option from "../shared/option";
+import { GuideContext } from "@/context/GuideContext";
 
 export default function Categories() {
-  const [isCategory, setCategory] = React.useState(String);
-
+  const { category, setCategory } = useContext(GuideContext);
   return (
     <div className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center">
       <div className="text-center mb-12 sm:mb-20">
