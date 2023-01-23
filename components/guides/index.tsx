@@ -6,7 +6,7 @@ import {
   RiNumber4,
   RiNumber5,
 } from "react-icons/ri";
-import Item from "@/shared/item";
+import Item from "@/components/shared/item";
 import Roadmap from "../../assets/images/roadmap.jsx";
 
 export default function Guides() {

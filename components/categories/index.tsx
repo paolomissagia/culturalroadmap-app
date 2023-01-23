@@ -1,6 +1,6 @@
 import React from "react";
 import { GiBookshelf, GiFilmProjector, GiMusicalScore } from "react-icons/gi";
-import Option from "../../shared/option";
+import Option from "../shared/option";
 
 export default function Categories() {
   const [isCategory, setCategory] = React.useState(String);

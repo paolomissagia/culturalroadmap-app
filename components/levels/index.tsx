@@ -1,6 +1,6 @@
 import React from "react";
 import { BsStar, BsStarHalf, BsStarFill } from "react-icons/bs";
-import Option from "../../shared/option";
+import Option from "../shared/option";
 
 export default function Levels() {
   const [isLevel, setLevel] = React.useState(String);

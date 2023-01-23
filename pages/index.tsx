@@ -1,8 +1,8 @@
-import Navbar from "@/shared/navbar";
+import Navbar from "@/components/shared/navbar";
 import Hero from "@/components/hero";
 import Categories from "@/components/categories";
 import Levels from "@/components/levels";
-import Guides from "@/components/guides";
+// import Guides from "@/components/guides";
 // import Share from "@/components/share";
 
 export default function Home() {
@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <Categories />
       <Levels />
-      <Guides />
+      {/* <Guides /> */}
       {/* <Share /> */}
     </>
   );
