@@ -13,8 +13,13 @@ export default async function handler(
   switch (method) {
     case "GET":
       try {
-        const guides = await Guide.find({});
-        res.status(200).json({ success: true, data: guides });
+        const { category, level } = req.headers;
+        console.log(req.headers);
+        const guide = await Guide.findOne({
+          category,
+          level,
+        });
+        res.status(200).json({ success: true, data: guide });
       } catch (error) {
         res.status(400).json({ success: false });
       }

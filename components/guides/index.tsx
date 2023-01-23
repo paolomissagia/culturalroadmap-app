@@ -17,8 +17,17 @@ export default function Guides() {
 
   const guideDetails = async () => {
     try {
-      const res = await fetch(`/api/guides`);
+      const resOptions = {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          category: `${category}`,
+          level: `${level}`,
+        },
+      };
+      const res = await fetch(`/api/guides`, resOptions);
       const data = await res.json();
+      setGuide(data);
       setLoading(false);
       console.log(data);
     } catch (error) {
