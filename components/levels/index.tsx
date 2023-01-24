@@ -33,7 +33,7 @@ export default function Levels() {
         <Option
           Icon={BsStar}
           Title="Beginner"
-          Description="Just Starting? No Problem at All."
+          Description="Just Starting? We've got you covered."
           Action={() => {
             handleLevel("Beginner");
           }}
@@ -41,7 +41,7 @@ export default function Levels() {
         <Option
           Icon={BsStarHalf}
           Title="Intermediate"
-          Description="Found Yourself Between Both Extremes? That is the Right Place!"
+          Description="You've got the basics? Time to move on."
           Action={() => {
             handleLevel("Intermediate");
           }}
@@ -49,7 +49,7 @@ export default function Levels() {
         <Option
           Icon={BsStarFill}
           Title="Advanced"
-          Description="Feeling Confident? Time to Advance."
+          Description="You're a pro? You've come to the right place."
           Action={() => {
             handleLevel("Advanced");
           }}

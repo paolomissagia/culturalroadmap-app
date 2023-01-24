@@ -1,7 +1,6 @@
 import React from "react";
 import { BsFacebook, BsTwitter, BsLinkedin } from "react-icons/bs";
 import { GiPartyPopper } from "react-icons/gi";
-import Link from "next/link";
 
 export default function Box({ Title, Description, isSave, isShare }: any) {
   return (
@@ -12,7 +11,7 @@ export default function Box({ Title, Description, isSave, isShare }: any) {
         </h2>
         <p className="leading-relaxed mb-6 text-center">{Description}</p>
         <div className="flex justify-around">
-          {isSave && <GiPartyPopper className="h-12 w-12" />}
+          {isSave && <GiPartyPopper className="h-12 w-12 hidden md:flex" />}
           {isShare && (
             <>
               <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//culturalroadmap-app.vercel.app/">
