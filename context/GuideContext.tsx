@@ -1,4 +1,4 @@
-import UserInput from "@/models/GuideType";
+import GuideType from "@/models/GuideType";
 import { createContext } from "react";
 
 const GuideContextInitialState = {
@@ -8,4 +8,4 @@ const GuideContextInitialState = {
   setLevel: () => {},
 };
 
-export const GuideContext = createContext<UserInput>(GuideContextInitialState);
+export const GuideContext = createContext<GuideType>(GuideContextInitialState);

@@ -4,14 +4,21 @@ import Option from "../shared/option";
 import { GuideContext } from "@/context/GuideContext";
 
 export default function Levels() {
-  const { level, setLevel } = useContext(GuideContext);
+  const { category, setLevel } = useContext(GuideContext);
+
+  const handleLevel = (inputLevel: string) => {
+    setLevel(inputLevel);
+  };
 
   return (
-    <div className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center">
+    <div
+      className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center"
+      id="levels"
+    >
       <div className="text-center mb-12 sm:mb-20">
         <h1 className="sm:text-3xl text-2xl text-white mb-4">LEVELS</h1>
         <p className="text-base leading-relaxed mx-auto text-gray-400 text-opacity-80">
-          You&apos;ve chosen !!category!! Now choose a level to proceed.
+          You&apos;ve chosen {category} Now choose a level to proceed.
         </p>
         <div className="flex mt-6 justify-center">
           <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex" />
@@ -23,7 +30,7 @@ export default function Levels() {
           Title="Beginner"
           Description="Just Starting? No Problem at All."
           Action={() => {
-            setLevel("Beginner");
+            handleLevel("Beginner");
           }}
         />
         <Option
@@ -31,7 +38,7 @@ export default function Levels() {
           Title="Intermediate"
           Description="Found Yourself Between Both Extremes? That is the Right Place!"
           Action={() => {
-            setLevel("Intermediate");
+            handleLevel("Intermediate");
           }}
         />
         <Option
@@ -39,7 +46,7 @@ export default function Levels() {
           Title="Advanced"
           Description="Feeling Confident? Time to Advance."
           Action={() => {
-            setLevel("Advanced");
+            handleLevel("Advanced");
           }}
         />
       </div>

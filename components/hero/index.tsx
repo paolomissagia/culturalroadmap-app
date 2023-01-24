@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Cello from "../../assets/images/cello.jsx";
+import { NavigationContext } from "@/context/NavigationContext";
+import { scrollTo } from "@/lib/scrollView";
 
 export default function Hero() {
-  const [isNext, setNext] = React.useState(false);
+  const { setStart } = useContext(NavigationContext);
+
+  const handleStart = () => {
+    setStart(true);
+    scrollTo("categories");
+  };
 
   return (
     <div className="container mx-auto px-5 flex md:flex-row flex-col items-center justify-center h-[80vh]">
@@ -21,15 +28,7 @@ export default function Hero() {
           <button
             type="button"
             className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg"
-            onClick={
-              isNext
-                ? () => {
-                    scroll();
-                  }
-                : () => {
-                    setNext(true);
-                  }
-            }
+            onClick={handleStart}
           >
             Start
           </button>

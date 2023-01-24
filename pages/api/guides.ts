@@ -14,7 +14,6 @@ export default async function handler(
     case "GET":
       try {
         const { category, level } = req.headers;
-        console.log(req.headers);
         const guide = await Guide.findOne({
           category,
           level,

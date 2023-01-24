@@ -1,12 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { GiBookshelf, GiFilmProjector, GiMusicalScore } from "react-icons/gi";
 import Option from "../shared/option";
 import { GuideContext } from "@/context/GuideContext";
 
 export default function Categories() {
-  const { category, setCategory } = useContext(GuideContext);
+  const { setCategory } = useContext(GuideContext);
+
+  const handleCategory = (inputCategory: string) => {
+    setCategory(inputCategory);
+  };
+
   return (
-    <div className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center">
+    <div
+      className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center"
+      id="categories"
+    >
       <div className="text-center mb-12 sm:mb-20">
         <h1 className="sm:text-3xl text-2xl text-white mb-4">CATEGORIES</h1>
         <p className="text-base leading-relaxed mx-auto text-gray-400 text-opacity-80">
@@ -22,20 +30,20 @@ export default function Categories() {
           Title="Literature"
           Description="The Finest Books of Western Civilization."
           Action={() => {
-            setCategory("Literature");
+            handleCategory("Literature");
           }}
         />
         <Option
           Icon={GiFilmProjector}
           Title="Cinema"
           Description="An Amazing Blend of Movies and Documentaries."
-          Action={() => setCategory("Cinema")}
+          Action={() => handleCategory("Cinema")}
         />
         <Option
           Icon={GiMusicalScore}
           Title="Music"
           Description="Find the Best of Classical, Opera and Ballet."
-          Action={() => setCategory("Music")}
+          Action={() => handleCategory("Music")}
         />
       </div>
     </div>
