@@ -41,7 +41,7 @@ export default function Guides() {
       if (isFirst) {
         setTimeout(() => {
           scrollTo("guide");
-        }, 500);
+        }, 200);
         setFirst(false);
       }
     } catch (error) {
