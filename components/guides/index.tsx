@@ -10,31 +10,40 @@ import Item from "@/components/shared/item";
 import Roadmap from "../../assets/images/roadmap.jsx";
 import { GuideContext } from "@/context/GuideContext";
 import { NavigationContext } from "@/context/NavigationContext";
+import { scrollTo } from "@/lib/scrollView";
 
 export default function Guides() {
   const { category, level } = useContext(GuideContext);
   const { setEnd } = useContext(NavigationContext);
   const [loading, setLoading] = useState(true);
   const [guide, setGuide]: any = useState(null);
+  const [isFirst, setFirst] = useState(true);
 
   const handleGuide = () => {
     setEnd(true);
   };
 
+  const resOptions = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      category: `${category}`,
+      level: `${level}`,
+    },
+  };
+
   const guideDetails = async () => {
     try {
-      const resOptions = {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          category: `${category}`,
-          level: `${level}`,
-        },
-      };
       const res = await fetch(`/api/guides`, resOptions);
       const data = await res.json();
       setGuide(data.data.items);
       setLoading(false);
+      if (isFirst) {
+        setTimeout(() => {
+          scrollTo("guide");
+        }, 500);
+        setFirst(false);
+      }
     } catch (error) {
       console.log(error);
     }
@@ -45,7 +54,6 @@ export default function Guides() {
   }, [category, level]);
 
   if (loading) return <h1>Loading...</h1>;
-
   return (
     <div className="container px-5 mx-auto min-h-screen flex flex-col items-center justify-center shrink">
       <div className="text-center mb-5 md:mb-10 mx-auto shrink">

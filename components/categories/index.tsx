@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { GiBookshelf, GiFilmProjector, GiMusicalScore } from "react-icons/gi";
 import Option from "../shared/option";
 import { GuideContext } from "@/context/GuideContext";
+import { scrollTo } from "@/lib/scrollView";
 
 export default function Categories() {
   const { setCategory } = useContext(GuideContext);
+
+  useEffect(() => {
+    scrollTo("categories");
+  }, []);
 
   const handleCategory = (inputCategory: string) => {
     setCategory(inputCategory);

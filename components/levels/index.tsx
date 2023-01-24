@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { BsStar, BsStarHalf, BsStarFill } from "react-icons/bs";
 import Option from "../shared/option";
 import { GuideContext } from "@/context/GuideContext";
+import { scrollTo } from "@/lib/scrollView";
 
 export default function Levels() {
   const { category, setLevel } = useContext(GuideContext);
+
+  useEffect(() => {
+    scrollTo("levels");
+  }, []);
 
   const handleLevel = (inputLevel: string) => {
     setLevel(inputLevel);

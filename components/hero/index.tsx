@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import Cello from "../../assets/images/cello.jsx";
 import { NavigationContext } from "@/context/NavigationContext";
-import { scrollTo } from "@/lib/scrollView";
 
 export default function Hero() {
   const { setStart } = useContext(NavigationContext);
 
   const handleStart = () => {
     setStart(true);
-    scrollTo("categories");
   };
 
   return (

@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "../shared/box";
 import Footer from "../shared/footer";
 
+import { scrollTo } from "@/lib/scrollView";
+
 export default function Final() {
+  useEffect(() => {
+    scrollTo("final");
+  }, []);
+
   return (
     <div className="min-h-screen sm:h-screen relative" id="final">
       <div className="container px-5 py-24 mx-auto flex flex-col items-center justify-center h-[80vh]">
