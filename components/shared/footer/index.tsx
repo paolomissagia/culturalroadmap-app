@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="container mx-auto py-4 px-5 flex flex-row absolute inset-x-0 bottom-0 items-center">
+    <div className="container mx-auto py-4 px-5 flex flex-row absolute inset-x-0 bottom-0 items-center justify-around">
       <p className="text-sm text-center sm:text-left">
         © 2023 Cultural Roadmap
         <span className="text-gray-500 ml-1 invisible sm:visible">
