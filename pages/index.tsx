@@ -14,7 +14,6 @@ export default function Home() {
   const [end, setEnd] = useState(false);
   const [category, setCategory] = useState("");
   const [level, setLevel] = useState("");
-  const root = document.getElementById("__next") as HTMLElement;
 
   return (
     <>
@@ -36,11 +35,11 @@ export default function Home() {
             setLevel,
           }}
         >
-          {start && createPortal(<Categories />, root)}
-          {category !== "" && createPortal(<Levels />, root)}
-          {level !== "" && createPortal(<Guides />, root)}
+          {start && createPortal(<Categories />, document.body)}
+          {category !== "" && createPortal(<Levels />, document.body)}
+          {level !== "" && createPortal(<Guides />, document.body)}
         </GuideContext.Provider>
-        {end && createPortal(<Final />, root)}
+        {end && createPortal(<Final />, document.body)}
       </NavigationContext.Provider>
     </>
   );
