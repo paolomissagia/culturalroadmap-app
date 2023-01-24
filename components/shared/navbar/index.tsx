@@ -24,9 +24,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-      <div className="hidden md:flex">
-        <button>Button</button>
-      </div>
       <div
         className="flex md:hidden flex-row cursor-pointer pr-4 z-50"
         onClick={() => setNav(!nav)}
