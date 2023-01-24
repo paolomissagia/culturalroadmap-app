@@ -11,7 +11,8 @@ export default function Final() {
             END OF THE ROAD
           </h1>
           <p className="text-base leading-relaxed mx-auto text-gray-400 text-opacity-80">
-            Almost there! Still, you have two paths to choose.
+            Hope you enjoyed the guide. If you have any questions, feel free to
+            contact me on github.
           </p>
           <div className="flex mt-6 md:mt-8 justify-center">
             <div className="w-16 h-1 rounded-full bg-indigo-500 inline-flex" />
@@ -19,14 +20,14 @@ export default function Final() {
         </div>
         <div className="flex flex-wrap m-4">
           <Box
-            Title="SAVE"
-            Description="More Time? More Guides? Save it for later."
-            isSave
-          />
-          <Box
             Title="SHARE"
             Description="Enjoyed the guide? Share with friends!"
             isShare
+          />
+          <Box
+            Title="THANKS"
+            Description="All the titles found on the generator were carefully selected by me and are between my favourites."
+            isSave
           />
         </div>
       </div>
