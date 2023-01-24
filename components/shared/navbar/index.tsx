@@ -13,15 +13,7 @@ export default function Navbar() {
           <span className="ml-3 text-xl text-white">Cultural Roadmap</span>
         </Link>
         <div className="hidden md:flex md:mx-auto flex-wrap items-center text-base z-50 md:border-l md:border-gray-700 md:pl-4">
-          <Link href="/" className="mr-5 hover:text-white">
-            Home
-          </Link>
-          <Link href="/about" className="mr-5 hover:text-white">
-            About
-          </Link>
-          <Link href="/contact" className="mr-5 hover:text-white">
-            Contact
-          </Link>
+          <p className="text-md mr-5 font-serif">ars longa, vita brevis</p>
         </div>
       </div>
       <div
